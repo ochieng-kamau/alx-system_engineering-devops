@@ -1,2 +1,2 @@
 #!/bin/bash
-echo '"(Ôo)'' > confused_smiley
+echo -e "\"(Ôo)\'"
