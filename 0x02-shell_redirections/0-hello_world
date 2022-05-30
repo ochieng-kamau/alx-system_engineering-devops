@@ -1,2 +1,2 @@
 #!/bin/bash
-cat < echo 'Hello, World'
+echo 'Hello, World' > hello_world | cat -e
