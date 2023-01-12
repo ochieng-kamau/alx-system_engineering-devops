@@ -33,18 +33,19 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend firstbalance
+frontend ochiengkamau.tech-http
         bind *:80
         mode http
 	http-request set-header X-Forwarded-Proto http
         default_backend webservers
 
-frontend firstbalance-https
+frontend ochiengkamau.tech-https
 	bind *:443 ssl crt /etc/haproxy/certs/www.ochiengkamau.tech.pem
 	http-request set-header X-Forwarded-Proto https
+	http-request redirect scheme https code 301 unless { ssl_fc }
 	default_backend webservers
 
-backend ehoneah-backend
+backend webservers
         balance roundrobin
         server 47806-web-01 52.3.245.186:80 check
         server 47806-web-02 54.237.227.141:80 check
