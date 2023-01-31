@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Requests module for sending HTTP requests to the Reddit API
+"""
 
 import requests
 
