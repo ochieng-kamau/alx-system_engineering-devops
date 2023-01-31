@@ -3,6 +3,7 @@
 Requests module for sending HTTP requests to the Reddit API
 """
 import requests
+from sys import argv
 
 
 def top_ten(subreddit):
