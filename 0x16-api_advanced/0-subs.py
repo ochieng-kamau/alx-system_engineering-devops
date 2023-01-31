@@ -2,6 +2,7 @@
 
 import requests
 
+
 def number_of_subscribers(subreddit):
     headers = {'User-Agent': 'MyRedditBot/0.0.1'}
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
@@ -12,4 +13,3 @@ def number_of_subscribers(subreddit):
         return subscribers
     else:
         return 0
-
