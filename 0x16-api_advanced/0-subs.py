@@ -8,8 +8,8 @@ import requests
 def number_of_subscribers(subreddit):
     """Return the total number of subscribers on a given subreddit."""
     headers = {'User-Agent': 'MyRedditBot/0.0.1'}
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    response = requests.get(url, headers=headers)
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code == 200:
         data = response.json()
         subscribers = data['data']['subscribers']
